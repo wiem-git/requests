@@ -1,0 +1,123 @@
+{
+	"static": {},
+	"combined": {
+		"EmployeesSet": [{
+		
+	"EmplyeeID": "1",
+	"Name": "Wiem",
+	"Position": "Developpeur",
+	"Email": "wiem.arres@faurecia.com"
+}, {
+	"EmplyeeID": "2",
+	"FullName": "ramzi",
+	"Position": "Developpeur",
+	"Email": "ramzi.BA@faurecia.com"
+}, {
+	"EmplyeeID": "3",
+	"FullName": "ahmed",
+	"Position": "consultant",
+	"Email": "ahmed@faurecia.com"
+}]
+,
+		"RequestsSet": [{
+			"ID": "1",
+			"Nodes": [{
+				"ID": "1"
+			}]
+		}, {
+			"ID": "2",
+			"Nodes": [{
+				"ID": "2"
+			}]
+		}, {
+			"ID": "3",
+			"Nodes": [{
+				"ID": "3"
+			}]
+		}, {
+			"ID": "4",
+			"Nodes": [{
+				"ID": "4"
+			}]
+		}, {
+			"ID": "5",
+			"Nodes": [{
+				"ID": "5"
+			}]
+		}, {
+			"ID": "6"
+		}, {
+			"ID": "7"
+		}, {
+			"ID": "8"
+		}, {
+			"ID": "9"
+		}, {
+			"ID": "10"
+		}],
+		"NotesSet": [{
+			"ID": "1",
+			"___FK_b4adf51335549e3f0bea23e4": "1",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Diane Albert"
+		}, {
+			"ID": "2",
+			"___FK_b4adf51335549e3f0bea23e4": "2",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Joshua Martin"
+		}, {
+			"ID": "3",
+			"___FK_b4adf51335549e3f0bea23e4": "3",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Diane Albert"
+		}, {
+			"ID": "4",
+			"___FK_b4adf51335549e3f0bea23e4": "4",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Timothy Harvey"
+		}, {
+			"ID": "5",
+			"___FK_b4adf51335549e3f0bea23e4": "5",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Anna Astor"
+		}, {
+			"ID": "6",
+			"___FK_b4adf51335549e3f0bea23e4": "6",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Timothy Harvey"
+		}, {
+			"ID": "7",
+			"___FK_b4adf51335549e3f0bea23e4": "7",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Frank Sanders"
+		}, {
+			"ID": "8",
+			"___FK_b4adf51335549e3f0bea23e4": "8",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Diane Albert"
+		}, {
+			"ID": "9",
+			"___FK_b4adf51335549e3f0bea23e4": "9",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Joshua Martin"
+		}, {
+			"ID": "10",
+			"___FK_b4adf51335549e3f0bea23e4": "10",
+			"Comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+			"Author": "Frank Sanders"
+		}],
+		"RequestTypeSet": [{
+			"ID": "01",
+			"Description": "SE16N"
+		}, {
+			"ID": "02",
+			"Description": "Home office"
+		}, {
+			"ID": "03",
+			"Description": "Sickness"
+		}, {
+			"ID": "04",
+			"Description": "Paid Leave (Vacation)"
+		}]
+	}
+}

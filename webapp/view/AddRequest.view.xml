@@ -1,0 +1,119 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core"
+xmlns:unified="sap.ui.unified" controllerName="com.sap.build.standard.approveLeaveRequests.controller.AddRequest">
+	<Page xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" 
+	showHeader="true" title="{i18n>AddPage}" showFooter="true" showNavButton="true" 
+	navButtonPress="_onPageNavButtonPress" cd:w5g.dt.context="/RequestsSet">
+		<content>
+			<form:Form width="auto" editable="true" visible="true" class="sapUiResponsiveMargin" id="form">
+				<form:title>
+					<core:Title text="{i18n>AddRequest}" level="H1" icon="sap-icon://add"/>
+				</form:title>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>RequestType}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true" width="auto"
+									valueState="None" maxWidth="100%" id="RequestType" selectionChange="affichesysteme">
+										<items>
+											<core:Item text="{i18n>SE11}" enabled="true" key="Item"/>
+											<core:Item text="{i18n>SE16n}" enabled="true" key="Item"/>
+											<core:Item text="{i18n>homeoffice}" enabled="true" key="Item"/>
+											<core:Item text="{i18n>TripValidation}" enabled="true" key="Item"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ReqTitle}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit"
+									visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" 
+									valueStateText="Invalid entry" maxLength="0" id="title"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>Descriptionajout}" design="Bold" width="100%" required="false"
+									textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<TextArea rows="10" cols="20" maxLength="0" wrapping="None" enabled="true" required="false" valueStateText="Invalid entry" 
+									visible="true" id="Reason"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ValidFrom}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="StartDate" width="auto" change="verifydate" displayFormat="short" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyy/MM/dd hh:mm"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>ValidTo}" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<DateTimePicker id="EndDate" width="auto" change="verifydate" displayFormat="short" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyy/MM/dd hh:mm"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label  text="{i18n>StratosTicket}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<Input id="StratosTicket" type="Text" showValueHelp="false" enabled="true" visible="true"
+									width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="false" id="systemvisible">
+								<form:label>
+									<Label  text="{i18n>System}" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</form:label>
+								<form:fields>
+									<ComboBox editable="true" enabled="true" visible="true"  required="true" width="auto" valueState="None" maxWidth="100%" id="system">
+										<items>
+											<core:Item text="DC1" enabled="true" key="Item"/>
+											<core:Item text="DC2" enabled="true" key="Item"/>
+											<core:Item text="FC1" enabled="true" key="Item"/>
+											<core:Item text="FC2" enabled="true" key="Item"/>
+										</items>
+									</ComboBox>
+								</form:fields>
+							</form:FormElement>
+							<form:FormElement visible="true"/>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<Text text="{i18n>UploadAttachement}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" class="sapUiResponsiveMargin"/>
+			<unified:FileUploader buttonText="{i18n>Browse}" style="Emphasized" icon="" buttonOnly="false" enabled="true" width="auto" iconFirst="true" uploadOnChange="true" maximumFileSize="10" mimeType="image/jpeg,image/gif,image/png,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" uploadComplete="_onFileUploaderUploadComplete" change="_onFileUploaderChange" typeMissmatch="_onFileUploaderTypeMissmatch" fileSizeExceed="_onFileUploaderFileSizeExceed">
+				<unified:headerParameters/>
+				<unified:parameters/>
+				<unified:xhrSettings/>
+			</unified:FileUploader>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="{i18n>Save}" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress" id="save"/>
+					<Button text="{i18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

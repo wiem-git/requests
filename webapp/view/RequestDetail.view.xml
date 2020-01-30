@@ -1,0 +1,94 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" controllerName="com.sap.build.standard.approveLeaveRequests.controller.RequestDetail">
+	<Page title="{i18n>DetailTitle}" showHeader="true" showFooter="true" navButtonPress="NavBack" navButtonType="Default">
+		<content>
+			<ObjectHeader xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" intro="" title="{FullName}" numberState="None" backgroundDesign="Transparent" visible="true" cd:w5g.dt.context="/EmployeesSet" titleLevel="H4" introActive="true" responsive="true">
+				<attributes>
+					<ObjectAttribute title="{i18n>EmployeeId}" text="{EmployeeID}" active="false" visible="true" textDirection="Inherit"/>
+					<ObjectAttribute title="{i18n>Position}" text="{Position}" active="false" visible="true" textDirection="Inherit"/>
+					<ObjectAttribute title="{i18n>Email}" text="{Email}" active="false" visible="true" textDirection="Inherit"/>
+					<ObjectAttribute title="{i18n>Mobile}" text="{Mobile}" active="false" visible="true" textDirection="Inherit"/>
+				</attributes>
+			</ObjectHeader>
+			<layout:VerticalLayout width="100%" visible="true">
+				<layout:content>
+					<Table xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" width="auto" 
+					items="{path:'EMtoReq', templateShareable:true,sorter:[{path:'DateSubmitted',descending:true}]}"
+					noDataText="{i18n>Nodata}" id="__table1" headerText="" mode="SingleSelectLeft"
+					includeItemInSelection="true" updateFinished="onUpdateFinished" rememberSelections="false">
+						<infoToolbar>
+							<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+								<content>
+									<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</content>
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<OverflowToolbar width="auto" height="auto" design="Transparent" busyIndicatorSize="Large" visible="true" enabled="true">
+								<content>
+									<Title text="" id="count" width="auto" wrapping="false" textAlign="Begin" visible="true" busyIndicatorSize="Large"/>
+									<ToolbarSpacer width=""/>
+									<OverflowToolbarButton text="Filter" type="Transparent" tooltip="{i18n>Filter}" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onOverflowToolbarButtonPress"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Phone" demandPopin="false" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>RequestType}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>DateSubmitted}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>Status}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>ValidFrom}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+							<Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+								<header>
+									<Text text="{i18n>ValidTo}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+								</header>
+								<footer/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active">
+								<cells>
+									<Text text="{LeaveType}"/>
+									<Text text="{DateSubmitted}" visible="true"/>
+									<ObjectNumber number="{Status}" emphasized="false" state="None" id="status"/>
+									<Text text="{StartDate}" visible="true"/>
+									<Text text="{EndDate}" visible="true"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</layout:content>
+			</layout:VerticalLayout>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="{i18n>Edit}" id="Edit" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+					<Button text="{i18n>Delete}" id="delete" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+					<Button text="{i18n>Add}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress2"/>
+					<Button text="{i18n>Details}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onLinkPress"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+	</Page>
+</mvc:View>

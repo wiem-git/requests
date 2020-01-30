@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+    <ViewSettingsDialog>
+        
+        <filterItems 
+       >
+            
+            <ViewSettingsFilterItem text="Request type" key="LeaveType"
+                                    items="{path: '/LeaveType'}">
+                <items>
+                    <ViewSettingsItem key="String___LeaveType___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+        
+            
+            <ViewSettingsFilterItem text="Status" key="Status"
+                                    items="{path: '/Status'}">
+                <items>
+                    <ViewSettingsItem key="String___Status___{}" text="{}"></ViewSettingsItem>
+                </items>
+            </ViewSettingsFilterItem>
+            
+            
+         
+            
+        </filterItems>
+        
+
+        
+
+        
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

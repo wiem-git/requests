@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="com.sap.build.standard.approveLeaveRequests.controller.D1_1461330792983" busyIndicatorSize="Auto">
+  <Dialog horizontalScrolling="false" showHeader="true" state="None" stretch="false" title="{i18n>SuppReq}" icon="sap-icon://alert" type="Standard" verticalScrolling="true">
+        <content>
+            <Text text="{i18n>Cancelleaverequestsubmitted?}" width="auto" maxLines="1" wrapping="true" textAlign="Center" textDirection="Inherit" visible="true"/>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="{i18n>SuppReq}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress" id="del"/>
+            <Button text="{i18n>Cancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</core:FragmentDefinition>

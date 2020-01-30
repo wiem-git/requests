@@ -1,0 +1,97 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" 
+xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="6ae49e2d17fb9f0b12b678a4" xml:lang="en" sap:schema-version="0000"
+        xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="6ae49e2d17fb9f0b12b678a4_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="EmployeesSet" EntityType="6ae49e2d17fb9f0b12b678a4.Employees"
+                sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="EmployeesEMtoReqRequests" 
+                Association="6ae49e2d17fb9f0b12b678a4.EmployeesEMtoReqRequests" sap:creatable="true" 
+                sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="EmployeesSet" Role="FromRole_EmployeesEMtoReqRequests"/>
+                    <End EntitySet="RequestsSet" Role="ToRole_EmployeesEMtoReqRequests"/>
+                </AssociationSet>
+                <EntitySet Name="RequestsSet" EntityType="6ae49e2d17fb9f0b12b678a4.Requests"
+                sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="RequestsNotesNotes" Association="6ae49e2d17fb9f0b12b678a4.RequestsNotesNotes"
+                sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="RequestsSet" Role="FromRole_RequestsNotesNotes"/>
+                    <End EntitySet="NotesSet" Role="ToRole_RequestsNotesNotes"/>
+                </AssociationSet>
+                <EntitySet Name="NotesSet" EntityType="6ae49e2d17fb9f0b12b678a4.Notes"
+                sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="Employees">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="FullName" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="FullName"/>
+                <Property Name="AvailableBalance" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="AvailableBalance"/>
+                <Property Name="EmployeeID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EmployeeID"/>
+                <Property Name="AvailBalance_Unit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Employees\&quot;,\&quot;entityId\&quot;:\&quot;Employees\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;AvailableBalance\&quot;,\&quot;propertyId\&quot;:\&quot;AvailableBalance\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;days\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5719e14ec903ee6c23418bde&quot;,&quot;propertyId&quot;:&quot;AvailableBalance&quot;,&quot;entityId&quot;:&quot;Employees&quot;,&quot;navPropId&quot;:&quot;&quot;}]}" sap:label="AvailBalance_Unit"/>
+                <Property Name="Photo" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Photo"/>
+                <Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+                <Property Name="Mobile" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mobile"/>
+                <Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+                <Property Name="Position" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="DefaultName6"/>
+                <NavigationProperty Name="EMtoReq" Relationship="6ae49e2d17fb9f0b12b678a4.EmployeesEMtoReqRequests"
+                FromRole="FromRole_EmployeesEMtoReqRequests" ToRole="ToRole_EmployeesEMtoReqRequests"/>
+            </EntityType>
+            <Association Name="EmployeesEMtoReqRequests">
+                <End Type="6ae49e2d17fb9f0b12b678a4.Employees" Multiplicity="1" Role="FromRole_EmployeesEMtoReqRequests"/>
+                <End Type="6ae49e2d17fb9f0b12b678a4.Requests" Multiplicity="*" Role="ToRole_EmployeesEMtoReqRequests"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmployeesEMtoReqRequests">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmployeesEMtoReqRequests">
+                        <PropertyRef Name="___FK_866937bf8055db3812ba5b07_00001"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Requests">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="LeaveType" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Type"/>
+                <Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Status"/>
+                <Property Name="NumberOfDays" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="NumberOfDays"/>
+                <Property Name="StartDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Date"/>
+                <Property Name="EndDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EndDate"/>
+                <Property Name="RequestTime" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="RequestTime"/>
+                <Property Name="StartDateLong" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StartDateLong"/>
+                <Property Name="EndDateLong" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="EndDateLong"/>
+                <Property Name="Period" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;StartDateLong\&quot;,\&quot;propertyId\&quot;:\&quot;StartDateLong\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; - \&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;EndDateLong\&quot;,\&quot;propertyId\&quot;:\&quot;EndDateLong\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5718c580fc3cc86f2394eea4&quot;,&quot;propertyId&quot;:&quot;StartDateLong&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;5718c580fc3cc86f2394eea3&quot;,&quot;propertyId&quot;:&quot;EndDateLong&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;}]}" sap:label="Period"/>
+                <Property Name="PeriodShort" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;IF\&quot;,\&quot;name\&quot;:\&quot;if\&quot;,\&quot;type\&quot;:\&quot;condition\&quot;,\&quot;condition\&quot;:[{\&quot;label\&quot;:\&quot;=\&quot;,\&quot;name\&quot;:\&quot;equals\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;StartDate\&quot;,\&quot;propertyId\&quot;:\&quot;StartDate\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;EndDate\&quot;,\&quot;propertyId\&quot;:\&quot;EndDate\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;then\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;StartDate\&quot;,\&quot;propertyId\&quot;:\&quot;StartDate\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;else\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;StartDate\&quot;,\&quot;propertyId\&quot;:\&quot;StartDate\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:7}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; - \&quot;,\&quot;id\&quot;:8}],\&quot;id\&quot;:6}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;EndDate\&quot;,\&quot;propertyId\&quot;:\&quot;EndDate\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:9}],\&quot;id\&quot;:5}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;573f2f109abc1e10e0f96b52&quot;,&quot;propertyId&quot;:&quot;StartDate&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;573f2f109abc1e10e0f96b51&quot;,&quot;propertyId&quot;:&quot;EndDate&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;573f2f109abc1e10e0f96b50&quot;,&quot;propertyId&quot;:&quot;StartDate&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;573f2f109abc1e10e0f96b4f&quot;,&quot;propertyId&quot;:&quot;StartDate&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;},{&quot;_id&quot;:&quot;573f2f109abc1e10e0f96b4e&quot;,&quot;propertyId&quot;:&quot;EndDate&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;}]}" sap:label="PeriodShort"/>
+                <Property Name="Requested_Unit" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;Requests\&quot;,\&quot;entityId\&quot;:\&quot;Requests\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;NumberOfDays\&quot;,\&quot;propertyId\&quot;:\&quot;NumberOfDays\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; Days\&quot;,\&quot;id\&quot;:2}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;_id&quot;:&quot;5718f8ef1850dc6e23b73de9&quot;,&quot;propertyId&quot;:&quot;NumberOfDays&quot;,&quot;entityId&quot;:&quot;Requests&quot;,&quot;navPropId&quot;:&quot;&quot;}]}" sap:label="Requested_LabelDays"/>
+                <Property Name="___FK_866937bf8055db3812ba5b07_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_866937bf8055db3812ba5b07_00001"/>
+                <NavigationProperty Name="Notes" Relationship="6ae49e2d17fb9f0b12b678a4.RequestsNotesNotes" FromRole="FromRole_RequestsNotesNotes" ToRole="ToRole_RequestsNotesNotes"/>
+            </EntityType>
+            <Association Name="RequestsNotesNotes">
+                <End Type="6ae49e2d17fb9f0b12b678a4.Requests" Multiplicity="1" Role="FromRole_RequestsNotesNotes"/>
+                <End Type="6ae49e2d17fb9f0b12b678a4.Notes" Multiplicity="*" Role="ToRole_RequestsNotesNotes"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_RequestsNotesNotes">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_RequestsNotesNotes">
+                        <PropertyRef Name="___FK_b4adf51335549e3f0bea23e4"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Notes">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="___FK_b4adf51335549e3f0bea23e4" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b4adf51335549e3f0bea23e4"/>
+                <Property Name="Comment" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Comment"/>
+                <Property Name="Author" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Author"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

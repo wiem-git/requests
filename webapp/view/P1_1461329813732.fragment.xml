@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" controllerName="com.sap.build.standard.approveLeaveRequests.controller.P1_1461329813732" xmlns="sap.m">
+    <Popover bounce="false" contentHeight="350px" contentWidth="250px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="true" title="Title" verticalScrolling="true" visible="true">
+        <content/>
+        <beginButton/>
+        <customHeader/>
+        <endButton>
+            <Button text="Close" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+        </endButton>
+        <footer/>
+        <subHeader/>
+    </Popover>
+</core:FragmentDefinition>
